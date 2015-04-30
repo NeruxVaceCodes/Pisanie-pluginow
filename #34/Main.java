@@ -36,7 +36,7 @@ public class Main extends JavaPlugin{
 			String owner = args[0];
 			String ulica = args[1];
 			if(we.getSelection(p) == null){
-				p.sendMessage("§cNo selection!");
+				p.sendMessage("Â§cNo selection!");
 				return true;
 			}
 			ProtectedCuboidRegion c = new ProtectedCuboidRegion("plot_" + owner,
@@ -44,7 +44,7 @@ public class Main extends JavaPlugin{
 					new BlockVector(we.getSelection(p).getNativeMaximumPoint())
 			);
 			if(wg.getRegionManager(p.getWorld()).getRegion(c.getId()) !=null){
-				p.sendMessage("§cTen gracz ma juz dzialke!");
+				p.sendMessage("Â§cTen gracz ma juz dzialke!");
 				return true;
 			}
 			if(ulica.equalsIgnoreCase("las")){
@@ -55,7 +55,7 @@ public class Main extends JavaPlugin{
 				c.setMinimumPoint(new BlockVector(c.getMinimumPoint().subtract(0, 40, 0)));
 				c.setMaximumPoint(new BlockVector(c.getMaximumPoint().add(0, 60, 0)));
 			} else{
-				p.sendMessage("§cNie ma takiej ulicy!");
+				p.sendMessage("Â§cNie ma takiej ulicy!");
 				return true;
 			}
 			DefaultDomain dd = new DefaultDomain();
