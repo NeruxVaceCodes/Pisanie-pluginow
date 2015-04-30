@@ -51,7 +51,7 @@ public class Main extends JavaPlugin{
 				c.setMinimumPoint(new BlockVector(c.getMinimumPoint().subtract(0, 20, 0)));
 				c.setMaximumPoint(new BlockVector(c.getMaximumPoint().add(0, 30, 0)));
 			}
-			if(ulica.equalsIgnoreCase("morska")){
+			else if(ulica.equalsIgnoreCase("morska")){
 				c.setMinimumPoint(new BlockVector(c.getMinimumPoint().subtract(0, 40, 0)));
 				c.setMaximumPoint(new BlockVector(c.getMaximumPoint().add(0, 60, 0)));
 			} else{
