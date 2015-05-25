@@ -11,6 +11,7 @@ public class BlockBreakListener implements Listener{
 
 	@EventHandler
 	public void onBreak(BlockBreakEvent e){
+		if(e.isCancelled()) return;
 		for(ItemToDrop i : Main.drops){
 			if(i.getType().equals(DropType.BLOCK)){
 				if(Utils.getChance(i.getChance())){
