@@ -15,6 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
 	
+	private static final Random RAND = new Random();
 	private Connection conn;
 	
 	public void onEnable(){
@@ -66,7 +67,7 @@ public class Main extends JavaPlugin implements Listener{
 			i++;
 			
 		}
-		Bukkit.getConsoleSender().sendMessage("§a§lLoaded §6§l" + i + " §a§lusers");
+		Bukkit.getConsoleSender().sendMessage("Â§aÂ§lLoaded Â§6Â§l" + i + " Â§aÂ§lusers");
 		closeConnection();
 	}
 	
@@ -89,7 +90,7 @@ public class Main extends JavaPlugin implements Listener{
 			conn.createStatement().executeUpdate(sb.toString());
 			i++;
 		}
-		Bukkit.getConsoleSender().sendMessage("§a§lSaved §6§l" + i + " §a§lusers");
+		Bukkit.getConsoleSender().sendMessage("Â§aÂ§lSaved Â§6Â§l" + i + " Â§aÂ§lusers");
 		closeConnection();
 	}
 	
@@ -126,24 +127,24 @@ public class Main extends JavaPlugin implements Listener{
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e){
 		User u = User.get(e.getPlayer());
-		switch (new Random().nextInt(4)){
+		switch (RAND.nextInt(4)){
 		case 0:
 			u.setRank(u.getRank() + 50);
-			Bukkit.broadcastMessage("§aRank");
+			Bukkit.broadcastMessage("Â§aRank");
 			break;
 		case 1:
 			u.setKills(u.getKills() + 1);
-			Bukkit.broadcastMessage("§aKills");
+			Bukkit.broadcastMessage("Â§aKills");
 			break;
 		case 2:
 			u.setDeaths(u.getDeaths() + 1);
-			Bukkit.broadcastMessage("§aDeaths");
+			Bukkit.broadcastMessage("Â§aDeaths");
 			break;
 		case 3:
 			u.setRank(u.getRank() + 50);
 			u.setKills(u.getKills() + 1);
 			u.setDeaths(u.getDeaths() + 1);
-			Bukkit.broadcastMessage("§aAll");
+			Bukkit.broadcastMessage("Â§aAll");
 			break;
 		}
 	}
