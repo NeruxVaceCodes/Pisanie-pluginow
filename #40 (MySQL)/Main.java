@@ -15,7 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
 	
-	private static final Random RAND = new Random();
+	public static final Random RAND = new Random();
 	private Connection conn;
 	
 	public void onEnable(){
