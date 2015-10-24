@@ -13,6 +13,7 @@ import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,6 +31,13 @@ public class Main extends JavaPlugin implements Listener{
 			if(Bukkit.getPlayer(id) !=null){
 				for(Player p : Bukkit.getOnlinePlayers()) p.showPlayer(Bukkit.getPlayer(id));
 			}
+		}
+	}
+	
+	@EventHandler
+	public void onJoin(PlayerJoinEvent e){
+		for(UUID id : hidden){
+			if(Bukkit.getPlayer(id) !=null)  e.getPlayer().hidePlayer(Bukkit.getPlayer(id));
 		}
 	}
 	
