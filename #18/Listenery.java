@@ -103,25 +103,20 @@ public class Listenery implements Listener{
 				if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ow.getItemMeta().getDisplayName())){
 					p.teleport(new Location(Bukkit.getWorlds().get(0), 0, 100, 0));
 					e.setCancelled(true);
-					e.setCursor(new ItemStack(Material.AIR, 1));
-					p.updateInventory();
+					p.openInventory(e.getInventory);
 				}
 				if(e.getCurrentItem().getItemMeta().getDisplayName().equals(nw.getItemMeta().getDisplayName())){
 					p.teleport(new Location(Bukkit.getWorlds().get(1), 0, 132, 0));
 					e.setCancelled(true);
-					e.setCursor(new ItemStack(Material.AIR, 1));
-					p.updateInventory();
+					p.openInventory(e.getInventory);
 				}
 				if(e.getCurrentItem().getItemMeta().getDisplayName().equals(ew.getItemMeta().getDisplayName())){
 					p.teleport(new Location(Bukkit.getWorlds().get(2), 0, 100, 0));
 					e.setCancelled(true);
-					e.setCursor(new ItemStack(Material.AIR, 1));
-					p.updateInventory();
+					p.openInventory(e.getInventory);
 				} else{
 					e.setCancelled(true);
-					e.setCursor(new ItemStack(Material.AIR, 1));
-					p.updateInventory();
-					p.closeInventory();
+					p.openInventory(e.getInventory);
 				}
 			}
 		}
