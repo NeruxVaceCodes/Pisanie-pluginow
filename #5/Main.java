@@ -13,7 +13,7 @@ public class Main extends JavaPlugin implements Listener{
 	@Override
 	public void onEnable(){
 		System.out.println("Uruchamianie...");
-		Bukkit.getPluginManager().registerEvents(new Main(), this);
+		Bukkit.getPluginManager().registerEvents(this, this);
 	}
 	
 	@Override
